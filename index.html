@@ -16,6 +16,8 @@
             color: #4a5d4a;
             position: relative;
             overflow: hidden;
+            padding: 20px;
+            box-sizing: border-box;
         }
 
         body::before {
@@ -35,6 +37,8 @@
             text-align: center;
             position: relative;
             z-index: 1;
+            width: 100%;
+            max-width: 600px;
         }
 
         .press-button {
@@ -104,6 +108,9 @@
             box-shadow: 0 20px 60px rgba(159, 168, 218, 0.15);
             color: #4a5d4a;
             position: relative;
+            overflow-x: auto;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .dog-ascii::before {
@@ -124,8 +131,6 @@
             50% { transform: translateX(-50%) translateY(-10px); }
         }
 
-
-
         @keyframes pulse {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.05); }
@@ -138,6 +143,82 @@
 
         .hidden {
             display: none;
+        }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .press-button {
+                padding: 16px 32px;
+                font-size: 16px;
+            }
+
+            .dog-container {
+                margin-top: 30px;
+            }
+
+            .dog-ascii {
+                font-size: 10px;
+                padding: 25px 20px;
+                border-radius: 15px;
+                line-height: 1.0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            .press-button {
+                padding: 14px 28px;
+                font-size: 15px;
+            }
+
+            .dog-container {
+                margin-top: 25px;
+            }
+
+            .dog-ascii {
+                font-size: 8px;
+                padding: 20px 15px;
+                border-radius: 12px;
+                line-height: 0.95;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .press-button {
+                padding: 12px 24px;
+                font-size: 14px;
+            }
+
+            .dog-ascii {
+                font-size: 7px;
+                padding: 15px 10px;
+                border-radius: 10px;
+                line-height: 0.9;
+            }
+        }
+
+        /* Landscape mobile orientation */
+        @media (max-height: 500px) and (orientation: landscape) {
+            body {
+                padding: 10px;
+            }
+
+            .dog-container {
+                margin-top: 20px;
+            }
+
+            .dog-ascii {
+                font-size: 9px;
+                padding: 20px;
+                line-height: 0.95;
+            }
         }
     </style>
 </head>
@@ -187,7 +268,6 @@
             const button = document.querySelector('.press-button');
             dogContainer.classList.add('show');
             button.style.display = 'none';
-
         }
     </script>
 </body>
